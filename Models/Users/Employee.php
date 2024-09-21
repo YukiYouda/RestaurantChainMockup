@@ -23,12 +23,12 @@ class Employee extends User implements FileConvertible {
     public function toHTMLEmployee(): string
     {
         return sprintf(
-            "<div><p>ID: %s, Job Title: %s, %s, Start Date: %s</p></div>",
+            "<div><p>ID: %s, Job Title: %s, %s %s, Start Date: %s</p></div>",
             $this->id,
             $this->jobTitle,
             $this->firstName,
             $this->lastName,
-            $this->startDate,
+            $this->startDate->format('Y-m-d'),
         );
     }
 }

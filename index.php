@@ -11,13 +11,19 @@ use Helpers\RandomGenerator;
 // クエリ文字列からパラメータを取得
 $min = $_GET['min'] ?? 5;
 $max = $_GET['max'] ?? 20;
+$numberOfLocation = $_GET['numberOfLocation'] ?? 5;
+$totalEmployees = $_GET['totalEmployees'] ?? 5;
+$salary = $_GET['salary'] ?? 500;
 
 // パラメータが整数であることを確認
 $min = (int)$min;
 $max = (int)$max;
+$numberOfLocation = (int)$numberOfLocation;
+$totalEmployees = (int)$totalEmployees;
+$salary = (int)$salary;
 
 // resraurantChainの生成
-$restaurantChains= RandomGenerator::restaurantChains($min, $max);
+$restaurantChains= RandomGenerator::restaurantChains($min, $max, $numberOfLocation, $totalEmployees, $salary);
 ?>
 
 <!DOCTYPE html>
